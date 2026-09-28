@@ -53,4 +53,4 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.ALL | filters.StatusUpdate.ALL, auto_react))
 
     print("Bot is starting...")
-    app.run_polling(drop_pending_updates=True)
+    app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
