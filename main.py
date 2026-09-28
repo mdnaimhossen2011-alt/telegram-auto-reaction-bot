@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     # টেলিগ্রাম বট স্টার্ট করা
     app = ApplicationBuilder().token(BOT_TOKEN).build()
-    app.add_handler(MessageHandler(filters.ALL, auto_react))
+    app.add_handler(MessageHandler(filters.ALL | filters.StatusUpdate.ALL, auto_react))
 
     print("Bot is starting...")
     app.run_polling(drop_pending_updates=True)
